@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+@import '../../mixin.scss';
+$bg: #313942;
+$ghost: #528cce;
+$heading: #5e5f5f;
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $bg;
+  font-family: 'Montserrat', sans-serif;
+}
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  text-align: center;
+}
+
+h1 {
+  color: $heading;
+  font-size: 12.5rem;
+  letter-spacing: .10em;
+  margin: .025em 0;
+  text-shadow: .05em .05em 0 rgba(0,0,0,.25);
+  white-space: nowrap;
+  font-size: 5rem;
+  
+  @include md{
+    font-size: 10.5rem;
+  }
+  
+  & > span {
+    animation: spooky 1.5s alternate infinite linear;
+    color: $ghost;
+    display: inline-block;
+  }
+}
+
+h2 {
+  color: $heading;
+  font-size: 1rem;
+  margin-bottom: .40em;
+  
+  @include md{
+    font-size: 2.5rem;
+  }
+}
+
+p {
+  color: #484848;
+  margin-top: 0;
+  font-size: 12px;
+  @include md{
+    font-size: 18px;
+  }
+}
+
+@keyframes spooky {
+  from {
+    transform: translatey(8%) scaley(.95);
+  }
+  
+  to {
+    transform: translatey(-10%);
+  }
+}
